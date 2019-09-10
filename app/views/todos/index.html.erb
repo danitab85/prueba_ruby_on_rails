@@ -1,0 +1,19 @@
+
+<h1>Lista ToDo</h1>
+<br>
+<br>
+
+  <% @todos.each do |todo| %>
+    <div class="card">
+        <h3 class="card-header"><%= todo.description %></h3>
+        <div class="card-body">
+          <%= todo.completed %>
+        </div>
+        <%= link_to "Editar", edit_todo_path(todo) %>
+        <%= link_to "Borrar", todo, method: :delete, data: {confirm: 'Estás seguro?'} %>
+
+    </div>
+
+  <% end %>
+  <br>
+<%= link_to 'Crear ToDo', todos_new_path, class:"btn btn-info" %>
