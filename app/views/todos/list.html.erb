@@ -1,0 +1,26 @@
+<h1>Mis ToDos</h1>
+
+<div class="container">
+  <div class="row" style="background-color: #e3f2fd;">
+    <div class="col-6">
+      ToDo NO Completados
+    </div>
+    <div class="col-6">
+      ToDo Completados
+    </div>
+  </div>
+  <div class="row">
+    <% @todos.each do |todo| %>
+        <% if todo.completed == false %>
+      <div class="col-6">
+        <%= todo.description %>
+      </div>
+        <%end%>
+        <% if todo.completed == true %>
+      <div class="col-6">
+        <%= todo.description %>
+      </div>
+      <%end%>
+    <%end%>
+  </div>
+</div>

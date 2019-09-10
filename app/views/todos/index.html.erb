@@ -6,14 +6,14 @@
   <% @todos.each do |todo| %>
     <div class="card">
         <h3 class="card-header"><%= todo.description %></h3>
+        <%= link_to "Hecho", complete_todo_path(todo), class:"btn btn-info" %>
         <div class="card-body">
           <%= todo.completed %>
         </div>
+        <%= link_to "Mostrar",todo %>
         <%= link_to "Editar", edit_todo_path(todo) %>
         <%= link_to "Borrar", todo, method: :delete, data: {confirm: 'Estás seguro?'} %>
-
     </div>
-
   <% end %>
-  <br>
+<br>
 <%= link_to 'Crear ToDo', todos_new_path, class:"btn btn-info" %>
